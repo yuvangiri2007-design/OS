@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int block[5]={100,500,200,300,600};
+    int process[4]={212,417,112,426};
+
+    for(int i=0;i<4;i++)
+    {
+        for(int j=0;j<5;j++)
+        {
+            if(process[i]<=block[j])
+            {
+                printf("Process %d allocated to Block %d\n",i+1,j+1);
+                block[j]-=process[i];
+                break;
+            }
+        }
+    }
+    return 0;
+}
+OUTPUT:
+Process 1 allocated to Block 2
+Process 2 allocated to Block 5
+Process 3 allocated to Block 2
