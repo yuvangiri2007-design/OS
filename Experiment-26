@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *fp;
+    char ch;
+
+    /* Create and Write */
+    fp = fopen("file.txt", "w");
+    fprintf(fp, "Operating System Lab");
+    fclose(fp);
+
+    printf("File created and data written.\n");
+
+    /* Read */
+    fp = fopen("file.txt", "r");
+
+    printf("File contents: ");
+    while((ch = fgetc(fp)) != EOF)
+    {
+        printf("%c", ch);
+    }
+    fclose(fp);
+
+    /* Append */
+    fp = fopen("file.txt", "a");
+    fprintf(fp, "\nFile Management Operations");
+    fclose(fp);
+
+    printf("\nData appended successfully.\n");
+
+    return 0;
+}
+OUTPUT:
+File created and data written.
+File contents: Operating System Lab
+Data appended successfully.
